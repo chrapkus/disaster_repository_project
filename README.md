@@ -20,8 +20,13 @@ pip install flask
 ```
 
 ## Project structure
-* data folder contains all the data used in project
-  * * fdgfg 
+* app - folder with all files related to web app
+ * templates - folder with html files
+ * run.py - backend script that uses trained model to predict category of given message 
+* data -  folder contains all the data used in project
+* scripts - folder with python scripts
+ * process_data.py - script that cleans, merges, and deduplicates input data
+ * train_classifier.py - scipt that train model to predict message categery
 
 
 

@@ -10,27 +10,45 @@ from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
 import joblib
 from sqlalchemy import create_engine
-
-
+from nltk.stem.porter import PorterStemmer
+from nltk.corpus import stopwords
+import re
 app = Flask(__name__)
 
 def tokenize(text):
+    """
+    input: 
+        text - message that should be prepered and tokenize
+    output:
+        text - tocenize, cleaned, normalize, lemmatizated message
+    """
+    # Lower all text
+    text = text.lower()
+
+    # Normalize text - removing punctuation
+    text = re.sub(r"[^a-zA-Z0-9]", " ", text)
+    
+    # Tokenize -> slit into list
     tokens = word_tokenize(text)
-    lemmatizer = WordNetLemmatizer()
+    
+    # Remove stop words
+    stop_words_list = stopwords.words('english')
+    tokens = [token.strip() for token in tokens if token not in stop_words_list]
+    
+    # Lemmatization
+    lemmed = [WordNetLemmatizer().lemmatize(token, pos = 'v') for token in tokens]
+    
+    # Steaming
+    stemmed = [PorterStemmer().stem(word) for word in lemmed]
 
-    clean_tokens = []
-    for tok in tokens:
-        clean_tok = lemmatizer.lemmatize(tok).lower().strip()
-        clean_tokens.append(clean_tok)
-
-    return clean_tokens
+    return stemmed
 
 # load data
 engine = create_engine('sqlite:///../disaster.db')
 df = pd.read_sql_table('disaster', engine)
 
 # load model
-model = joblib.load("../disaster_model.sav")
+model1 = joblib.load("../disaster_model.sav")
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
@@ -115,8 +133,10 @@ def go():
     query = request.args.get('query', '') 
 
     # use model to predict classification for query
-    classification_labels = model.predict([query])[0]
+    classification_labels = model1.predict([query])[0]
+
     classification_results = dict(zip(df.columns[4:], classification_labels))
+
 
     # This will render the go.html Please see that file. 
     return render_template(

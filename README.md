@@ -24,6 +24,8 @@ pip install flask
   * templates - folder with html files
   * run.py - backend script that uses trained model to predict category of given message 
 * data -  folder contains all the data used in project
+  * categories.csv - data set with catgories of message
+  * messages.csv - data set with messages
 * scripts - folder with python scripts
   * process_data.py - script that cleans, merges, and deduplicates input data
   * train_classifier.py - scipt that train model to predict message categery

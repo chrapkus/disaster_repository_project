@@ -44,7 +44,7 @@ Before running each script navigate to its directory.
     * If you will not pass arguments default values will be used
      `python train_classifier.py`
 * Run web app with plotly visualizations
-     *`python run.py`
+     * `python run.py`
 * To see working web app open browser and go to http://0.0.0.0:3001/ or to http://localhost:3001/
 
 ## Licensing, Authors, Acknowledgements

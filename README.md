@@ -34,20 +34,18 @@ pip install flask
 All scripts uses relative file paths.
 Before running each script navigate to its directory.
 
-- ETL pipeline that cleans data and stores it in database
-    `python process_data.py ../data/messages.csv ../data/categories.csv ../disaster.db`
-    or
-    If you will not pass arguments default values will be used
+* ETL pipeline that cleans data and stores it in database
+    * `python process_data.py ../data/messages.csv ../data/categories.csv ../disaster.db`
+    * If you will not pass arguments default values will be used
      `python process_data.py`
     
-- ML pipeline that trains and saves classifier
-    `python train_classifier.py ../disaster.db ../disaster_model.sav`
-    or
-    If you will not pass arguments default values will be used
+* ML pipeline that trains and saves classifier
+    * `python train_classifier.py ../disaster.db ../disaster_model.sav`
+    * If you will not pass arguments default values will be used
      `python train_classifier.py`
-- Run web app with plotly visualizations
-     `python run.py`
-- To see working web app open browser and go to http://0.0.0.0:3001/ or to http://localhost:3001/
+* Run web app with plotly visualizations
+     *`python run.py`
+* To see working web app open browser and go to http://0.0.0.0:3001/ or to http://localhost:3001/
 
 ## Licensing, Authors, Acknowledgements
 This app was completed as part of the [Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025).

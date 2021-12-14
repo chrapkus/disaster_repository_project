@@ -33,6 +33,11 @@ pip install flask
 ## Instructions:
 All scripts uses relative file paths.
 Before running each script navigate to its directory.
+### Example
+```bash
+cd app
+python run.py
+```
 
 * ETL pipeline that cleans data and stores it in database
     * `python process_data.py ../data/messages.csv ../data/categories.csv ../disaster.db`

@@ -53,10 +53,12 @@ python run.py
 * To see working web app open browser and go to http://0.0.0.0:3001/ or to http://localhost:3001/
 
 ## Screenshots
-* What other factors influence prices?
-  ![start_view](https://github.com/chrapkus/disaster_repository_project/blob/main/imput_screenshot.PNG)
-* What other factors influence prices?
-  ![search_view](https://github.com/chrapkus/disaster_repository_project/blob/main/sample_screen_shot.PNG)
+
+### Start View
+![start_view](https://github.com/chrapkus/disaster_repository_project/blob/main/imput_screenshot.PNG)
+  
+### Search View
+![search_view](https://github.com/chrapkus/disaster_repository_project/blob/main/sample_screen_shot.PNG)
 
 ## Licensing, Authors, Acknowledgements
 This app was completed as part of the [Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025).
